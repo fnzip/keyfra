@@ -1,0 +1,17 @@
+POST http://localhost:3000/ai
+Content-Type: application/json
+
+{
+  "text": "animate car driving from left to right"
+}
+
+# HTTP/1.1 200 OK
+# Content-Type: application/json; charset=UTF-8
+# Access-Control-Allow-Origin: *
+# Date: Sun, 16 Mar 2025 21:53:04 GMT
+# Content-Length: 141
+
+# {
+#   "name": "car_drive_left_to_right",
+#   "keyframes": "   0% {     transform: translateX(-100%);   }   100% {     transform: translateX(100%);   } "
+# }
