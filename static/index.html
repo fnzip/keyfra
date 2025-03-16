@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyfra - Design Canvas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Mobile Toggle Button -->
+        <button class="mobile-toggle">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+        </button>
+
+        <!-- Left Sidebar Panel (now containing keyframe generator) -->
+        <div class="sidebar">
+            <div class="logo">
+                <h2>Keyfra</h2>
+                <button class="close-sidebar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+
+            <!-- Scrollable sidebar content -->
+            <div class="sidebar-content">
+                <div class="panel-section">
+                    <div class="input-group">
+                        <textarea class="prompt-input" placeholder="Enter prompt, e.g., 'animate this car'"></textarea>
+                        <button class="generate-btn">Generate Animation</button>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h4>Options</h4>
+                    <div class="option-group">
+                        <label for="duration">Duration:</label>
+                        <div class="duration-input">
+                            <input type="number" id="duration" value="1" min="0.1" step="0.1">
+                            <select id="duration-unit">
+                                <option value="s">s</option>
+                                <option value="ms">ms</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="timing-function">Timing Function:</label>
+                        <select id="timing-function">
+                            <option value="ease">ease</option>
+                            <option value="linear">linear</option>
+                            <option value="ease-in">ease-in</option>
+                            <option value="ease-out">ease-out</option>
+                            <option value="ease-in-out">ease-in-out</option>
+                            <option value="cubic-bezier">cubic-bezier</option>
+                        </select>
+                    </div>
+
+                    <div class="option-group">
+                        <label for="object-type">Object Type:</label>
+                        <div class="object-options">
+                            <button class="object-btn active" data-type="box">Box</button>
+                            <button class="object-btn" data-type="image">Image</button>
+                            <button class="object-btn" data-type="text">Text</button>
+                        </div>
+
+                        <!-- Object type specific inputs -->
+                        <div class="object-inputs">
+                            <!-- Box options (default, no additional inputs needed) -->
+                            <div class="input-option" id="box-options" style="display: block;">
+                                <!-- No additional inputs for box -->
+                            </div>
+
+                            <!-- Image options -->
+                            <div class="input-option" id="image-options" style="display: none;">
+                                <!-- <label for="image-upload">Upload Image:</label> -->
+                                <div class="image-upload-container">
+                                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                                    <div class="drop-zone">Drop image here</div>
+                                </div>
+                            </div>
+
+                            <!-- Text options -->
+                            <div class="input-option" id="text-options" style="display: none;">
+                                <!-- <label for="text-input">Enter Text:</label> -->
+                                <input type="text" id="text-input" placeholder="Type your text here">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel-section">
+                    <h4>Export</h4>
+                    <div class="export-group">
+                        <div class="css-preview">
+                            <label for="css-output">CSS Output:</label>
+                            <textarea id="css-output" readonly></textarea>
+                        </div>
+                        <button class="export-btn">Export CSS</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Work Canvas -->
+        <div class="main-content">
+            <div class="canvas-container">
+                <div class="canvas">
+                    <div class="box"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/js-beautify@1.15.4/js/lib/beautify-css.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
