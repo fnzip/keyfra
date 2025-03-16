@@ -8,9 +8,6 @@ document.addEventListener('DOMContentLoaded', function () {
     const dropZone = document.querySelector('.drop-zone');
     const textInput = document.getElementById('text-input');
     const canvas = document.querySelector('.canvas');
-    const mobileToggle = document.querySelector('.mobile-toggle');
-    const closeSidebar = document.querySelector('.close-sidebar');
-    const sidebar = document.querySelector('.sidebar');
     const generateBtn = document.querySelector('.generate-btn');
     const cssOutput = document.getElementById('css-output');
     const exportBtn = document.querySelector('.export-btn');
@@ -21,15 +18,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Animation data storage
     let currentAnimation = null;
     let currentElement = null;
-
-    // Mobile sidebar toggle
-    mobileToggle.addEventListener('click', function () {
-        sidebar.classList.add('active');
-    });
-
-    closeSidebar.addEventListener('click', function () {
-        sidebar.classList.remove('active');
-    });
 
     // Object type selection
     objectButtons.forEach(button => {
@@ -183,24 +171,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // API client implementation
     const apiClient = {
-        // getAnimation: function (name) {
-        //     return fetch('/ai', {
-        //         method: 'POST',
-        //         headers: {
-        //             'Content-Type': 'application/json',
-        //         },
-        //         body: JSON.stringify({
-        //             text: `${name}`,
-        //         }),
-        //     })
-        //         .then(response => {
-        //             if (!response.ok) {
-        //                 throw new Error('Network response was not ok');
-        //             }
-        //             return response.json();
-        //         });
-        // },
-
         generateFromPrompt: function (prompt) {
             return fetch('/ai', {
                 method: 'POST',
