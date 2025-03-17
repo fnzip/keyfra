@@ -100,6 +100,9 @@ select {
   padding: 1rem;
   scrollbar-width: thin;
   scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+  display: flex;
+  flex-direction: column;
+  height: calc(100% - 60px); /* Adjust based on your logo height */
 }
 
 /* Custom scrollbar styling */
@@ -526,6 +529,34 @@ select {
   width: 24px;
   height: 24px;
   color: #333;
+}
+
+/* Add this to your existing CSS */
+
+.credits {
+    margin-top: auto;
+    padding: 15px;
+    text-align: center;
+    font-size: 0.9rem;
+    color: #888;
+    border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.credits a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.credits a:hover {
+    color: #555;
+}
+
+.credits svg {
+    margin-right: 5px;
 }
 
 /* ===== MEDIA QUERIES ===== */
