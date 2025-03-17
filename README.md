@@ -2,7 +2,7 @@
 Generate CSS keyframes instantly with the power of AI. Simplify your animations and streamline your workflow
 
 
-[![Visit App](https://img.shields.io/badge/visi%20app-52b5f7?style=for-the-badge&logoColor=white)](https://keyfra.alfian.app/)
+[![Visit App](https://img.shields.io/badge/visit%20app-52b5f7?style=for-the-badge&logoColor=white)](https://keyfra.alfian.app/)
 
 ![Keyfra Logo](./screenshoot.png)
 
