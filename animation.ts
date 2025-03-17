@@ -46,7 +46,7 @@ export async function generateAnimation(
     // Handle potential trailing commas in objects which are invalid in JSON
     jsonString = jsonString.replace(/,(\s*[}\]])/g, "$1");
 
-    console.log("Cleaned JSON string:", jsonString);
+    // console.log("Cleaned JSON string:", jsonString);
 
     try {
       // Parse the JSON string
@@ -64,7 +64,7 @@ export async function generateAnimation(
         keyframes: animationData.keyframes,
       };
     } catch (parseError) {
-      console.error("JSON Parse error:", parseError);
+      // console.error("JSON Parse error:", parseError);
       // Fallback: Try to extract name and keyframes directly if JSON parsing fails
       const nameMatch = content.match(/["']name["']\s*:\s*["']([^"']*)["']/);
       const keyframesMatch = content.match(
